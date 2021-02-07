@@ -17,8 +17,8 @@
 
     <ul>
         {% for note in notes %}
-            <li>{{ note }}</li>
-            <a href="{{ url_for('display_edit_note', note_text=note) }}">Edit</a>
+            <li>{{ note['text'] }}</li>
+            <a href="{{ url_for('display_edit_note', note_id=note['id']) }}">Edit</a>
         {% endfor %}
     </ul>
 

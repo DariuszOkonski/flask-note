@@ -33,9 +33,12 @@ def add_note():
     return redirect(url_for('list_notes'))
 
 
-@app.route('/edit_note/<note_text>', methods=['GET'])
-def display_edit_note(note_text):
-    print(note_text)
+@app.route('/edit_note/<note_id>', methods=['GET'])
+def display_edit_note(note_id):
+    note_text = ""
+    for note in get_notes():
+        if int(note['id']) == int(note_id):
+            note_text = note['text']
 
     return render_template('edit_note.html',
                            note_text=note_text)
@@ -46,6 +49,7 @@ def edit_note():
     note_dict = dict(request.form)
     add_note_to_list(note_dict['note'])
     return redirect(url_for('list_notes'))
+
 
 if __name__ == '__main__':
     app.run()
