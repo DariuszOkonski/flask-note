@@ -1,19 +1,22 @@
 from flask import Flask, render_template
-import user_data
+from user_data import get_name
+from notes import get_notes
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    name = user_data.get_name()
+    name = get_name()
     return render_template('index.html',
                            name=name)
 
 
-@app.route('/note')
-def note():
-    return '<h1>my notes!!!</h1>'
+@app.route('/notes')
+def list_notes():
+    notes = get_notes()
+    return render_template('notes.html',
+                           notes=notes)
 
 
 if __name__ == '__main__':

@@ -10,9 +10,12 @@
     <title>Flask Note</title>
 </head>
 <body>
-    <h1>Welcome {{ name }} - on superNote web application</h1>
+    <h1>Notes</h1>
 
-    <a href="{{ url_for('list_notes') }}">Go to Notes</a>
+    <a href="{{ url_for('index') }}">Go to Index</a>
     <hr/>
+
+    <div>{{ notes }}</div>
+
 </body>
 </html>
