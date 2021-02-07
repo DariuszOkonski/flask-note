@@ -2,3 +2,6 @@ warszawa
 gliwice
 krakow
 ruda slaska
+zabrze
+ruda slaska
+wawa
