@@ -8,6 +8,8 @@
     <title>Flask Note</title>
 </head>
 <body>
-    <h1>Flask Note</h1>
+    <h1>Welcome {{ name }} - on superNote web application</h1>
+
+    <a href="{{ url_for('note') }}">Go to notes</a>
 </body>
 </html>

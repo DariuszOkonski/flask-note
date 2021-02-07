@@ -1,11 +1,14 @@
 from flask import Flask, render_template
+import user_data
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    name = user_data.get_name()
+    return render_template('index.html',
+                           name=name)
 
 
 @app.route('/note')
