@@ -15,5 +15,12 @@
     <a href="{{ url_for('index') }}">Go to Index</a>
     <hr/>
 
+    <form action="{{ url_for('add_note') }}" method="post">
+        <label for="note">Treść notatki:</label>
+        <input type="text" name="note" id="note">
+
+        <input type="submit" value="Zapisz">
+    </form>
+
 </body>
 </html>
