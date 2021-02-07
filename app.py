@@ -18,6 +18,10 @@ def list_notes():
     return render_template('notes.html',
                            notes=notes)
 
+@app.route('/add_note')
+def add_note():
+    return render_template('add_note.html')
+
 
 if __name__ == '__main__':
     app.run()

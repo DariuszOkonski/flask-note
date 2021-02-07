@@ -15,7 +15,11 @@
     <a href="{{ url_for('index') }}">Go to Index</a>
     <hr/>
 
-    <div>{{ notes }}</div>
+    <ul>
+        {% for note in notes %}
+            <li>{{ note }}</li>
+        {% endfor %}
+    </ul>
 
 </body>
 </html>
